@@ -19,7 +19,7 @@ Yumboard is an interactive recipe web app that allows users to discover, save, a
 - LocalStorage (Favorites, Shopping List, User Recipes)
 
 ## 📸 Preview
-![Yumboard Screenshot](![12](https://github.com/user-attachments/assets/06aadea1-2366-4aa6-808b-26dca0ce3255)
+![12](![12](https://github.com/user-attachments/assets/06aadea1-2366-4aa6-808b-26dca0ce3255)
 )
 
 ## 🚀 How to Use
