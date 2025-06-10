@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recipe Finder</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>🍽️ YumBoard 🍽️</h1>
+    <!-- In your navbar -->
+<a href="#about" class="nav-link">About</a>
+  </header>
+  <!-- 🔍 Search Form -->
+  <form id="searchForm">
+    <input type="text" id="searchInput" placeholder="Search recipes..." required />
+    <button type="submit">Search</button>
+    <select id="dietSelect" aria-label="Select Diet">
+  <option value="">Select Diet</option>
+  <option value="vegetarian">Vegetarian</option>
+  <option value="vegan">Vegan</option>
+  <option value="glutenfree">Gluten Free</option>
+</select>
+
+<select id="cuisineSelect" aria-label="Select Cuisine">
+  <option value="">All Cuisines</option>
+  <option value="American">American</option>
+  <option value="British">British</option>
+  <option value="Canadian">Canadian</option>
+  <option value="Chinese">Chinese</option>
+  <option value="French">French</option>
+  <option value="Indian">Indian</option>
+  <option value="Italian">Italian</option>
+  <option value="Japanese">Japanese</option>
+  <option value="Mexican">Mexican</option>
+  <option value="Spanish">Spanish</option>
+  <option value="Thai">Thai</option>
+</select>
+
+<select id="sortSelect">
+  <option value="">Sort By</option>
+  <option value="asc">A → Z</option>
+  <option value="desc">Z → A</option>
+</select>
+    <button id="randomBtn">🎲 Surprise Me!</button>
+    <button id="viewFavoritesBtn">View Favorites ❤️</button>
+    <button onclick="removeFromFavorites('${recipe.idMeal}')">🗑 Remove</button>
+  <button id="viewShoppingListBtn">View Shopping List</button>
+<div id="shoppingListContainer" class="hidden"></div>  
+  </form>
+  <!-- 📋 Recipe List Container -->
+  <div id="recipeList" class="recipe-container"></div>
+
+  <!-- 🍲 Modal for Recipe Details -->
+  <div id="recipeModal" class="modal hidden">
+    <div class="modal-content">
+      <span class="closeBtn">&times;</span>
+      <div id="recipeDetails"></div>
+    </div>
+  </div>
+
+  <section id="about" style="padding: 40px; background-color: #fefefe; text-align: center;">
+  <h2>About YumBoard 🍽️</h2>
+  <p style="max-width: 800px; margin: auto; font-size: 18px; line-height: 1.6;">
+    YumBoard is your personal cooking companion! Whether you're looking for a quick meal,
+    a healthy option, or just trying something new, we've got delicious recipes from all around the world.
+    Use our filters, surprise button, and shopping list to make your cooking experience smarter and easier.
+  </p>
+</section>
+
+<section id="share-recipe" style="padding: 50px 20px; background-color: #fff;">
+  <h2 style="text-align: center;">Share Your Recipe</h2>
+  <form id="recipeForm" style="max-width: 600px; margin: auto;" data-aos="fade-up">
+    <input type="text" id="recipeName" placeholder="Recipe Name" required><br>
+    <textarea id="recipeIngredients" placeholder="Ingredients (comma separated)" required></textarea><br>
+    <textarea id="recipeInstructions" placeholder="Instructions" required></textarea><br>
+    <input type="text" id="recipeImage" placeholder="Image URL (optional)"><br>
+    <button type="submit">Submit Recipe</button>
+  </form>
+  <div id="sharedRecipes" style="margin-top: 40px;"></div>
+</section>
+
+  <script src="app.js"></script>
+</body>
+</html>
